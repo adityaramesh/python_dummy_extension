@@ -9,7 +9,12 @@ for the extension module defines the following functions:
 
 # Installation
 
-Run the following commands:
+First, define the following environment variables:
+
+- `CXX`: Path to a version of g++ or clang++ that is C++14-compliant.
+- `PYTHON_INCLUDE_PATH`: Path to the include directory of the active Python installation.
+
+Then run the following commands:
 
 	rake
 	pip install .

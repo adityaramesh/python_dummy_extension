@@ -1,1 +1,1 @@
-include dummy/dummy.so
+include dummy/_dummy.so

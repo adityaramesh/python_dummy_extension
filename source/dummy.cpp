@@ -66,7 +66,7 @@ auto method_def = std::array<PyMethodDef, 3>{{
 auto module_def = PyModuleDef{
 	PyModuleDef_HEAD_INIT,
 	 // Module name.
-	"dummy",
+	"_dummy",
 	// Module docstring.
 	"An example Python extension module written in C++.",
 	// Size of per-interpreter state of the module, or -1 if the module keeps its state
@@ -76,7 +76,7 @@ auto module_def = PyModuleDef{
 };
 
 extern "C" EXPORT_SYMBOL
-auto PyInit_dummy() noexcept
+auto PyInit__dummy() noexcept
 { return PyModule_Create(&module_def); }
 
 }

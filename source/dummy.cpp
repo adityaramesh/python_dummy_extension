@@ -44,8 +44,11 @@ auto reverse(obj_ptr, obj_ptr args) noexcept
 		return obj_ptr{};
 
 	try {
-		auto src     = make_string_view(src_obj);
+		auto src = make_string_view(src_obj);
 		auto dst_obj = PyUnicode_New(src.size(), PyUnicode_MAX_CHAR_VALUE(src_obj));
+		if (not dst_obj)
+			return obj_ptr{};
+
 		std::reverse_copy(src.begin(), src.end(), PyUnicode_1BYTE_DATA(dst_obj));
 		return dst_obj;
 	}
